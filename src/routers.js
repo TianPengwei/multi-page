@@ -15,5 +15,21 @@ var pages = [
 
 module.exports = {
     entries : entries,
-    pages : pages 
+    pages : pages,
+    defaultConfig : {
+        names : ['base','jquery'],
+        filename : 'assets/js/[name].js',
+        minChunks : 2
+    },
+    globalJs : {
+        echarts : 'echarts'
+    },
+    htmlWebpackPluginConfig : {
+        hash : true,
+        inject : true,
+        chunksSortMode : 'manual',
+        chunks : ['jquery','base'],
+        minify : false,
+        showErrors : true
+    }
 };

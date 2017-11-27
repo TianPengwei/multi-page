@@ -1,8 +1,9 @@
+const extractTextPlugin = require('extract-text-webpack-plugin');
 
 var loaders = [
     {
         test : /\.css$/,
-        use : [ {loader : 'style-loader'}, {loader : 'css-loader'} ]
+        use : [ {loader : 'style-loader'}, {loader : 'css-loader'}, {loader : 'postcss-loader'} ]
     },
     {
         test : /\.(jpg|png|gif)$/,
@@ -25,15 +26,24 @@ var loaders = [
     },
     {
         test : /\.scss$/,
-        use : [ {loader : 'style-loader'}, {loader : 'css-loader'}, {loader : 'sass-loader'} ]
+        use : [ {loader : 'style-loader'}, {loader : 'css-loader'}, {loader : 'postcss-loader'}, {loader : 'sass-loader'} ]
     },
     {
         test : /\.less$/,
-        use : [ {loader : 'style-loader'}, {loader : 'css-loader'}, {loader : 'less-loader'} ]
+        use : extractTextPlugin.extract({
+            fallback : 'style-loader',
+            use : [{loader : 'css-loader'}, {loader : 'postcss-loader'}, {loader : 'less-loader'}]
+        })
     },
     {
         test : /\.html$/,
         use : 'html-withimg-loader'
+    },{
+        test : /\.html$/,
+        use : 'html-loader'
+    },{
+        test : /\.tpl$/,
+        use : 'ejs-loader'
     }
 ];
 module.exports = loaders;
