@@ -12,4 +12,8 @@ require('../css/pages/index.css');
     const renderNav = require('../../tpls/html/renderNav');
     renderNav('JS_nav');
 }
+{
+    const [a,b,c,d,e] = '我是中国';
+    console.log(a+b);
+}
 
