@@ -1,4 +1,4 @@
-.nav{width:218px;overflow-y:auto;height:100%;border-right:1px solid #ddd}
+.nav{width:218px;overflow-y:auto;height:100%;border-right:1px solid #ddd;min-width:218px;}
 nav ul{padding:10px 0;}
 nav ul li{padding-left:35px;position:relative;font-size:16px;color:#222;line-height:2;font-family:'Microsoft Yahei'}
 nav ul li.cur{background:#eaf0f2;}

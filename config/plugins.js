@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const uglifyPlugin = require('uglifyjs-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
@@ -10,16 +11,25 @@ var config = routers.htmlWebpackPluginConfig;
 var plugins = [
     new webpack.optimize.CommonsChunkPlugin(routers.defaultConfig),
     new webpack.ProvidePlugin(routers.globalJs),
-    new extractTextPlugin('assets/css/base.css')  
+    new extractTextPlugin('assets/css/base.css'),
+    new copyPlugin([
+        {
+            from : path.resolve(__dirname,'../src/assets/data'),
+            to : path.resolve(__dirname,'../dist/assets/data')
+        }
+    ]) 
 ];
 
 //生产模式
 if(ENV == 'build') {
+    //js压缩功能由 -p 代替，原因是此插件打包时会报错，-p参数会自动过滤那些压缩报错的js；如ejs的tpl模板
+    /*
     plugins.push(new uglifyPlugin({
         compress : {
             warnings : false
         }        
     }));
+    */
     config.minify = {
         htmlminify : true,
         collapseWhitespace : true,
