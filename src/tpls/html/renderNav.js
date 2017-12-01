@@ -8,14 +8,20 @@ function renderNav(id,$) {
             $(this).addClass('cur').siblings().removeClass('cur');
         }
     });
-    const base = $('body').attr('base');
-    $('body').removeAttr('base');
+    const base = $('body').attr('base'),
+          page = $('body').attr('page');
+    $('body').removeAttr('base').removeAttr('page');
     $('nav li a').each(function() {
         var _href = $(this).attr('href');
+        $(this).parent().removeClass('cur');
         if(base == './pages/') {            
         } else if(base == './'){
             $(this).attr('href','./pages/'+ _href);
         }
+        if(_href.split('.')[0] == page) {
+            $(this).parent().addClass('cur');
+        }
     });
+
 };
 module.exports = renderNav;

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --inline --color --open",
     "build": "webpack -p --watch",
-    "clear": "rm ./dist/*"
+    "clear": "rimraf ./dist/*"
   },
   "author": "",
   "license": "ISC",
