@@ -38,6 +38,6 @@ module.exports = {
         minify : false,
         showErrors : true
     },
-    host : '192.168.1.219',  //localhost
+    host : 'localhost',  //localhost
     port : 8081
 };

@@ -10,3 +10,11 @@ a{color:#666;text-decoration:none;}
 .box{display:flex;flex-wrap:wrap;height:100%;align-content:flex-start;flex-direction:column;}
 .main{display:flex;flex:1;height:100%;padding:0 15px 0 0;}
 .wrap{display:none;width:100%;min-width:600px;padding:15px;overflow-y:auto;}
+
+.page_loading{width:100%;text-align:center;}
+.page_loading i{display:inline-block;width:16px;height:16px;border-top:2px solid #16aa6a;border-radius:50%;animation:spinner .6s linear infinite}
+.page_loading p{font-size:12px;line-height:30px;color:#bbb;}
+
+@keyframes spinner{
+    to{transform:rotate(360deg);}
+}
