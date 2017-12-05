@@ -2,15 +2,14 @@ const webpack = require('webpack');
 const path = require('path');
 const _plugins = require('./config/plugins');
 const _loaders = require('./config/loaders');
-const _routers = require('./src/routers');
 const _build = require('./config/build');
 
 module.exports = {
-    entry : _routers.entries,
+    entry : _build.entry,
     output : {
         path : path.resolve(__dirname,'dist'),
         filename : 'assets/js/[name].js',
-        publicPath : _build.publicPath
+        //publicPath : _build.publicPath
     },
     module : {
         rules : _loaders

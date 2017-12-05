@@ -5,7 +5,8 @@ var entries = {
     es6 : './src/assets/js/es6',
     jquery : 'jquery',
     base : './src/assets/js/base',
-    echarts : './src/assets/js/echarts'
+    echarts : './src/assets/js/echarts',
+    sass : './src/assets/js/sass'
 };
 var pages = [
     {
@@ -16,6 +17,8 @@ var pages = [
         path : './src/pages/echarts.html'
     },{
         path : './src/pages/es6.html'
+    },{
+        path : './src/pages/sass.html'
     }
 ];
 
@@ -38,6 +41,6 @@ module.exports = {
         minify : false,
         showErrors : true
     },
-    host : 'localhost',  //localhost
+    host : 'localhost',
     port : 8081
 };
