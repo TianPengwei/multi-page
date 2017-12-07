@@ -1,14 +1,16 @@
 
-var entries = {
+const entries = {
     index : './src/assets/js/index',
     page1 : './src/assets/js/page1',
     es6 : './src/assets/js/es6',
     jquery : 'jquery',
     base : './src/assets/js/base',
     echarts : './src/assets/js/echarts',
+    media : './src/assets/js/media',
+    fetch : './src/assets/js/fetch',
     sass : './src/assets/js/sass'
 };
-var pages = [
+const pages = [
     {
         path : './src/index.html'
     },{
@@ -19,28 +21,14 @@ var pages = [
         path : './src/pages/es6.html'
     },{
         path : './src/pages/sass.html'
+    },{
+        path : './src/pages/media.html'
+    },{
+        path : './src/pages/fetch.html'
     }
 ];
 
 module.exports = {
     entries : entries,
-    pages : pages,
-    defaultConfig : {
-        names : ['base','jquery'],
-        filename : 'assets/js/[name].js',
-        minChunks : 2
-    },
-    globalJs : {
-        echarts : 'echarts'
-    },
-    htmlWebpackPluginConfig : {
-        hash : true,
-        inject : true,
-        chunksSortMode : 'manual',
-        chunks : ['jquery','base'],
-        minify : false,
-        showErrors : true
-    },
-    host : 'localhost',
-    port : 8081
+    pages : pages
 };

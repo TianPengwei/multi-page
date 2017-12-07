@@ -1,23 +1,7 @@
-const webpack = require('webpack');
-const path = require('path');
-const _plugins = require('./config/plugins');
-const _loaders = require('./config/loaders');
-const _build = require('./config/build');
-
 module.exports = {
-    entry : _build.entry,
-    output : {
-        path : path.resolve(__dirname,'dist'),
-        filename : 'assets/js/[name].js',
-        //publicPath : _build.publicPath
-    },
-    module : {
-        rules : _loaders
-    },
-    plugins : _plugins,
-    devServer : {
-        host : _build.host,
-        port : _build.port,
-        contentBase : path.resolve(__dirname,'dist')
-    }
+    entry : require('./config/_entry'),
+    output : require('./config/_output'),
+    module : require('./config/_module'),
+    plugins : require('./config/_plugins'),
+    devServer : require('./config/_devServer')
 };

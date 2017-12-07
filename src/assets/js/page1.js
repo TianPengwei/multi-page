@@ -1,6 +1,5 @@
 const $ = require('jquery');
 const base = require('./base');
-require('../css/base.less');
 require('../css/pages/echarts.scss');
 //渲染公共头部
 {

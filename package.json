@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --inline --color --open",
-    "build": "webpack -p --watch",
-    "clear": "rimraf ./dist/*"
+    "local" : "webpack --color",
+    "build": "webpack -p --color",
+    "clear": "rm -rf dist/*"
   },
   "author": "",
   "license": "ISC",
