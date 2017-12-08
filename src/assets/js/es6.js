@@ -14,6 +14,16 @@ require('../css/pages/es6.scss');
 }
 
 {
+    let a = {
+        name : 'bob',age : 20
+    };
+    let b = {
+        name : '张三',addr : '深圳市'
+    };
+    console.log(Object.assign(b,a));
+}
+
+{
     //class
     console.log('----------------class-------------------');
     class Coder {
@@ -48,7 +58,6 @@ require('../css/pages/es6.scss');
             return target[key];
         }
     });
-    console.log(pro.name);
 }
 
 {
@@ -63,14 +72,10 @@ require('../css/pages/es6.scss');
     m.set(o,'人');
     m.set(arr,o);
     m.delete(arr);
-    console.log(m);
 }
 
 {
     const dom = document.getElementById('J_es6');
     let setArr = new Set(['田','鹏','伟','田']);
-    console.log(setArr);  //Set(3) {'田','鹏','伟'}
     console.log(Array.isArray(setArr));  //false
-    for(let item of setArr) console.log(item);
-    setArr.forEach((val)=>console.log(val));
 }
