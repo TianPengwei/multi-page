@@ -1,7 +1,7 @@
 {
-  "name": "pages",
+  "name": "multi-page",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack多页面打包",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
     "build": "webpack -p --color",
     "clear": "rm -rf dist/*"
   },
-  "author": "",
+  "author": "tianpengwei",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
