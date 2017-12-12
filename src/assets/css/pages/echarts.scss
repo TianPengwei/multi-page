@@ -1,5 +1,18 @@
 $color:#16aa6a;
 .wrap{display:block;}
-.test{
-    width:500px;height:300px;border:1px solid $color;border-radius:10px;padding:10px;    
+
+.list{
+    display:flex;  //容器flex布局
+    flex-direction:row;  //属性决定子元素排列方向
+    flex-wrap:wrap;  //子元素如何换行
+    justify-content:flex-start;  //子元素水平对其方式
+    align-items:flex-start;  //子元素垂直对其方式
+    .con{
+        flex-grow:1;  //1：子元素等分剩余空间
+        height:400px;
+        max-width:500px;
+        margin:10px;
+        padding:5px;
+        background:#f2f2f2;
+    }
 }

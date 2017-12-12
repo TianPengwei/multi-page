@@ -14,6 +14,30 @@ require('../css/pages/es6.scss');
 }
 
 {
+   let json = {
+       name : 'test',skill : 'web'
+   }; 
+   var map = new Map();
+   map.set(json,'iam');
+   console.log(map.get(json));
+}
+
+{
+    console.log('-------------set------------');
+    let arr = ['a','b','c',1,2];
+    let setArr = new Set(arr);
+    console.log(setArr.size);
+    setArr.add('测试');
+    setArr.delete('a');
+    console.log(setArr.has('b'));
+    console.log(setArr);
+    for(let item of setArr) {
+        console.log(item);
+    }
+    setArr.forEach((val)=>console.log('---'+val));
+}
+{
+    console.log('---------------------------------------');
     let a = {
         name : 'bob',age : 20
     };
