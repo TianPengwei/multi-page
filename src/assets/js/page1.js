@@ -11,3 +11,6 @@ require('../css/pages/echarts.scss');
     const renderNav = require('../../tpls/html/renderNav');
     renderNav('JS_nav',$);
 }
+{
+    
+}
