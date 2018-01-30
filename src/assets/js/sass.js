@@ -12,15 +12,3 @@ require('../css/pages/sass.scss');
     const renderNav = require('../../tpls/html/renderNav');
     renderNav('JS_nav',$);
 }
-{
-    let o = {
-        name : '田鹏伟',
-        skill : 'web'
-    };
-    let age = Symbol();
-    o[age] = 18;
-    console.log(o);
-    for(let val in o) {
-        console.log(o[val]);
-    }
-}

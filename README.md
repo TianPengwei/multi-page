@@ -1,6 +1,4 @@
-# pages 多页面打包
-## webpack实现多页面打包
-### JavaScript：ejs、es6；CSS：less、sass、css；HTML：html、tpl
+## JavaScript、es6、ejs；sass、less...
 
 ``` bash
 # 安装依赖

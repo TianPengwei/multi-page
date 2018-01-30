@@ -13,22 +13,75 @@ require('../css/pages/echarts.scss');
 
 }
 {
-    var myChart = echarts.init(document.getElementById('test'));
+    var myChart = echarts.init(document.getElementById('con1'));
     // 绘制图表
     myChart.setOption({
+        color: ['#3398DB'],
         title: {
-            text: 'ECharts 入门示例1'
+            text: '柱状图'
         },
         tooltip: {},
         xAxis: {
-            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+            data: ['1月', '2月', '3月', '4月', '5月', '6月','7月','8月','9月','10月','11月','12月']
         },
         yAxis: {},
         series: [{
-            name: '销量',
+            name: '投资额',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
+            data: [5, 20, 36, 10, 10, 20,20,18,19,32,10,11]
         }]
     });  
+}
+{
+    var myChart = echarts.init(document.getElementById('con2'));
+    // 绘制图表
+    myChart.setOption({
+        title: {
+            text: '累计赚取',
+            //subtext: '纯属虚构'
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        color: ['#f63'],
+        toolbox: {
+            show: false,
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                dataView: {readOnly: false},
+                magicType: {type: ['line', 'bar']},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        xAxis:  {
+            type: 'category',
+            boundaryGap: false,
+            data: ['1月', '2月', '3月', '4月', '5月', '6月','7月','8月','9月','10月']
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value}万'
+            }
+        },
+        series: [            
+            {
+                name:'赚取（万）',
+                type:'line',
+                data:[20, 21, 23, 58, 35, 25, 10, 20,45,10],
+                markPoint: {
+                    data: [
+                        
+                    ]
+                },
+                markLine: {
+                    
+                }
+            }
+        ]
+    });
 }
 
