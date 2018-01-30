@@ -2,6 +2,8 @@ const $ = require('jquery');
 const base = require('./base');
 require('../css/base.less');
 require('../css/pages/es6.scss');
+// const str = require('testconsole');
+// console.log(str);
 //渲染公共头部
 {
     const renderHead = require('../../tpls/html/renderHead');
