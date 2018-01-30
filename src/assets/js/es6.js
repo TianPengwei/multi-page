@@ -2,6 +2,8 @@ const $ = require('jquery');
 const base = require('./base');
 require('../css/base.less');
 require('../css/pages/es6.scss');
+// const str = require('testconsole');
+// console.log(str);
 //渲染公共头部
 {
     const renderHead = require('../../tpls/html/renderHead');
@@ -11,6 +13,89 @@ require('../css/pages/es6.scss');
 {
     const renderNav = require('../../tpls/html/renderNav');
     renderNav('JS_nav',$);
+}
+
+{
+    
+}
+
+{
+        
+    function step1(resolve,reject) {
+        const status = 1;
+        if(status == 1) {
+            resolve('step1-resolve');
+            console.log('step1完成');
+        } else {
+            reject('step1-reject');
+            console.log('step1失败');
+        }
+    }
+    function step2(resolve,reject) {
+        const status = 1;
+        if(status == 1) {
+            resolve('step2-resolve');
+            console.log('step2完成');
+        } else {
+            reject('step2-reject');
+            console.log('step2失败');
+        }
+    }
+    function step3(resolve,reject) {
+        const status = 1;
+        if(status == 1) {
+            resolve('step3-resolve');
+            console.log('step3完成');
+        } else {
+            reject('step3-reject');
+            console.log('step3失败');
+        }
+    }
+    console.log(new Promise(step1));
+    new Promise(step1).then(function(val) {
+        console.log(val);
+        return new Promise(step2);
+    }).then(function(val) {
+        console.log(val);
+    });
+}
+
+{
+    console.log('----------------Map-------------');
+    let json = {
+        name : 'test',skill : 'web'
+    }; 
+    let arr = [1,2,3];
+    var map = new Map();
+    map.set(json,'iam');
+    map.set(arr,'数组');
+    console.log(map.size);
+    console.log(map.get(json));
+}
+
+{
+    console.log('-------------set------------');
+    let arr = ['a','b','c',1,2];
+    let setArr = new Set(arr);
+    console.log(setArr.size);
+    setArr.add('测试');
+    setArr.delete('a');
+    console.log(setArr.has('b'));
+    console.log(setArr);
+    // for(let item of setArr) {
+    //     console.log(item);
+    // }
+    // setArr.forEach((val)=>console.log('---'+val));
+}
+{
+    console.log('---------------------------------------');
+    let a = {
+        name : 'bob',age : 20
+    };
+    let b = {
+        name : '张三',addr : '深圳市'
+    };
+    console.log(Object.assign(b,a));
 }
 
 {
@@ -48,7 +133,6 @@ require('../css/pages/es6.scss');
             return target[key];
         }
     });
-    console.log(pro.name);
 }
 
 {
@@ -63,14 +147,10 @@ require('../css/pages/es6.scss');
     m.set(o,'人');
     m.set(arr,o);
     m.delete(arr);
-    console.log(m);
 }
 
 {
     const dom = document.getElementById('J_es6');
     let setArr = new Set(['田','鹏','伟','田']);
-    console.log(setArr);  //Set(3) {'田','鹏','伟'}
     console.log(Array.isArray(setArr));  //false
-    for(let item of setArr) console.log(item);
-    setArr.forEach((val)=>console.log(val));
 }
