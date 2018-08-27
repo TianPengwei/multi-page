@@ -15,6 +15,6 @@ module.exports = {
         minify : false,
         showErrors : true
     },
-    host : '192.168.1.219',//可选参数，默认为localhost
+    //host : '192.168.1.219',//可选参数，默认为localhost
     port : 8083  //可选参数，默认为8081
 };
