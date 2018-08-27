@@ -9,7 +9,4 @@ npm run dev
 
 # 打包
 npm run build
-
-# 清空dist文件夹
-npm run clear
 ```
