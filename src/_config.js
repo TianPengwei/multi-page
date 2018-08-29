@@ -16,11 +16,6 @@ module.exports = {
         minify : false,
         showErrors : true
     },
-    proxy: {
-        '/api/**': {
-          target: 'http://192.168.2.10:8012/', // 开发环境api地址
-        }
-    },
     host : address,//可选参数，默认为localhost
     port : 8083  //可选参数，默认为8081
 };

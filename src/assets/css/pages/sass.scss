@@ -1,0 +1,43 @@
+$color : #16aa6a;
+.box1{
+    display:flex;  //容器flex布局
+    flex-direction:row;  //属性决定子元素排列方向
+    flex-wrap:wrap;  //子元素如何换行
+    justify-content:flex-start;  //子元素水平对其方式
+    align-items:flex-start;  //子元素垂直对其方式
+}
+@mixin tac {
+    text-align:center;
+}
+@mixin mar($size,$value:10px) {
+    font-size:$size;
+    margin:0 $value $value 0;
+};
+.sass{
+    /* 继承 */
+    @extend .box1;  
+    /* 重用代码块 */
+    @include tac;
+    .poetry{
+        flex-grow:1;  //1：子元素等分剩余空间
+        /* 带参数的代码重用 */
+        @include mar(14px,15px);
+        border-radius:8px;padding:10px;background:#f2f2f2;
+        .title{
+            font-size:18px;font-weight:500;
+            a{
+                &:hover{color:$color;}
+            }
+        }
+        .author{
+            padding-bottom:5px;
+            span{color:$color;}
+        }
+        ul{
+            li{
+                line-height:2;font-size:14px;
+                span{color:$color;}
+            }
+        }
+    }
+}

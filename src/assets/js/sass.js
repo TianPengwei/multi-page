@@ -1,6 +1,7 @@
 const $ = require('jquery');
 const base = require('./base');
-require('../css/pages/echarts.scss');
+require('../css/base.less');
+require('../css/pages/sass.scss');
 //渲染公共头部
 {
     const renderHead = require('../../tpls/html/renderHead');
@@ -10,7 +11,4 @@ require('../css/pages/echarts.scss');
 {
     const renderNav = require('../../tpls/html/renderNav');
     renderNav('JS_nav',$);
-}
-{
-    
 }

@@ -1,6 +1,6 @@
 const $ = require('jquery');
 const base = require('./base');
-require('../css/pages/echarts.scss');
+require('../css/pages/media.scss');
 //渲染公共头部
 {
     const renderHead = require('../../tpls/html/renderHead');
