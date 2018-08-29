@@ -29,7 +29,7 @@ for(let i=0,len=pages.length; i<len; i++) {
     const page = pages[i];
     htmlConfig.push(new htmlWebpackPlugin({
         template : page.path,
-        filename : page.path.replace('./src/',''),
+        filename : page.path.replace('./src/pages/',''),
         minify : page.minify || config.minify,
         hash : (function() {
             if(page.hash === false) return false;

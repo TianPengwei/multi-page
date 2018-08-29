@@ -1,16 +1,10 @@
-const $ = require('jquery');
-const base = require('./base');
-require('../css/pages/echarts.scss');
+import {Carouse, Base, $, CryptoJS} from './pub/packages';
+require('../css/base.less');
+require('../css/pages/index.scss');
 //渲染公共头部
-{
-    const renderHead = require('../../tpls/html/renderHead');
-    renderHead('JS_head',$);
-}
-//渲染公共导航
-{
-    const renderNav = require('../../tpls/html/renderNav');
-    renderNav('JS_nav',$);
-}
-{
+Base.initModules(['footer','header','goToTop']);
+//渲染首页内容
+{ 
     
 }
+
